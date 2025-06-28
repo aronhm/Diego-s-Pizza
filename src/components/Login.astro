@@ -1,0 +1,89 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+---
+
+<BaseLayout>
+  <div class="relative flex items-center justify-center min-h-screen bg-night text-center overflow-hidden">
+    
+    <!-- Video de fondo -->
+    <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+      <source src="/bg.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Contenedor del formulario -->
+    <div class="p-8 form-container shadow-lg rounded-xl text-white w-96 animate-fadeIn z-10 relative bg-floral bg-opacity-80 backdrop-blur-md">
+      <h1 class="text-3xl font-bold">Iniciar Sesión</h1>
+      <p class="mt-4 text-lg">Accede para ver la sorpresa ❤️</p>
+
+      <form method="POST" id="login" class="flex flex-col gap-5 mt-6">
+        <label class="form-control w-full">
+          <div class="label">
+            <span class="label-text text-white">Email</span>
+          </div>
+          <input
+            type="text"
+            id="identifier"
+            name="identifier"
+            placeholder="example@gmail.com"
+            class="input-custom w-full"
+            required
+          />
+        </label>
+
+        <label class="form-control w-full">
+          <div class="label">
+            <span class="label-text text-white">Password</span>
+          </div>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="password"
+            class="input-custom w-full"
+            required
+          />
+        </label>
+
+        <button class="btn-primary waves waves-light">Login</button>
+
+        <div id="login-error-content" class="text-red-400 mt-2"></div>
+      </form>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  import { actions, isInputError } from "astro:actions";
+
+  const form = document.getElementById("login");
+  const errorContent = document.getElementById("login-error-content");
+
+  if (form instanceof HTMLFormElement) {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+
+      const { error } = await actions.login(formData);
+      if (!error) location.reload();
+
+      if (error && errorContent instanceof HTMLElement) {
+        errorContent.innerHTML = "";
+
+        if (isInputError(error)) {
+          const ul = document.createElement("ul");
+
+          error.issues.forEach((err) => {
+            const li = document.createElement("li");
+            li.innerText = err.message;
+            ul.appendChild(li);
+          });
+
+          errorContent.appendChild(ul);
+          return;
+        }
+        errorContent.innerText = error.message;
+      }
+    });
+  }
+</script>

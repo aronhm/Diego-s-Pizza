@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Fondo nocturno con degradado */
+.bg-night {
+  background: linear-gradient(180deg, #0a0f30 0%, #1b1f4b 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilo de formulario oscuro */
+.form-container {
+  background: rgba(20, 20, 50, 0.85); /* Oscuro con transparencia */
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Inputs oscuros con brillo */
+.input-custom {
+  @apply bg-gray-900 text-white border border-gray-600 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none;
+}
+
+/* Botón con efecto de brillo */
+.btn-primary {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 hover:shadow-lg transition-all duration-300;
+  box-shadow: 0 0 10px rgba(0, 162, 255, 0.5);
+}
+
+/* Animación de estrellas */
+@keyframes falling-stars {
+  from {
+    transform: translateY(-100vh) translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100vh) translateX(-20vw);
+    opacity: 0;
+  }
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  background: white;
+  opacity: 0.8;
+  animation: falling-stars linear infinite;
+}
+
+.bg-floral {
+  background-image: url('/images/flowers.png'); /* Pon tu imagen de flores en la carpeta public */
+  background-size: cover;
+  background-position: center;
+}
+/* Botón de cerrar */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: red;
+}

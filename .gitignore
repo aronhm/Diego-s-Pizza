@@ -1,0 +1,9 @@
+# build output
+dist/
+.vscode
+.wrangler/
+
+# generated types
+.astro/
+node_modules
+.env

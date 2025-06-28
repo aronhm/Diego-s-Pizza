@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-html",
+    "stylelint-config-tailwindcss"
+  ],
+  "rules": {
+    "media-feature-range-notation": null,
+    "custom-property-empty-line-before": null,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ],
+    "at-rule-no-unknown": null,
+    "tailwindcss/no-custom-classname": null
+  },
+  "plugins": ["stylelint-tailwindcss"],
+  "ignoreFiles": ["node_modules/**/*", "dist/**/*"]
+}

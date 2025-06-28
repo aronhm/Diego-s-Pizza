@@ -1,0 +1,9 @@
+---
+Astro.cookies.set("sb-access-token", "", { expires: new Date(0) });
+Astro.cookies.set("sb-refresh-token", "", { expires: new Date(0) });
+
+return new Response(null, {
+  status: 302,
+  headers: { Location: "/login" },
+});
+---

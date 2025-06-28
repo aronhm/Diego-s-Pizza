@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navbar from "../../components/Navbar.astro";
+const user = { 
+  name: "Admin",
+};
 ---
 
 <BaseLayout>
@@ -20,17 +23,7 @@ import Navbar from "../../components/Navbar.astro";
     <div
       class="relative max-w-2xl bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-lg"
     >
-      <h1 class="text-4xl font-bold animate-fade-in">¡Bienvenida ❤️</h1>
-      <p class="mt-4 text-lg animate-fade-in delay-200">
-        Me alegra mucho que estés aquí. He preparado una pagina para ti con
-        mucho cariño. Espero que disfrutes este pequeño detalle. 💖
-      </p>
-      <p class="mt-4 text-lg animate-fade-in delay-400">
-        ¡Gracias por ser parte de mi vida! 🥰
-      </p>
-      <p class="mt-4 text-lg animate-fade-in delay-600">
-        En esta pagina escucharas la musica de Paulo Londra 🦁.
-      </p>
+      <h1 class="text-4xl font-bold animate-fade-in">¡Bienvenido {user.name}!</h1>
       <div class="mt-6"></div>
     </div>
   </section>

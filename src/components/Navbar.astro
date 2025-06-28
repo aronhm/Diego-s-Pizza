@@ -31,8 +31,8 @@ const user = {
         aria-labelledby="dropdown-menu"
       >
         <li>
-          <a id="special-date-link" class="dropdown-item" href=""
-            >Evento Especial</a>
+          <a id="special-date-link" class="dropdown-item" href="#"
+            >example</a>
         </li>
       </ul>
     </div>
@@ -94,41 +94,3 @@ const user = {
     </div>
   </div>
 </nav>
-
-<script>
-  const link = document.getElementById("special-date-link");
-  const now = new Date();
-  const month = now.getMonth() + 1; // enero = 0
-  const day = now.getDate();
-
-  let path = "/admin/dashboard"; // Default
-
-  if (link) {
-    if (month === 2 && day === 14) {
-      path = "/admin/valentine";
-      link.textContent = "¡Feliz San Valentín!";
-    } else if (month === 9 && day === 21) {
-      path = "/admin/flowers";
-      link.textContent = "Flores Amarillas 🌻";
-    } else if (month === 12 && day === 25) {
-      path = "/admin/christmas";
-      link.textContent = "Navidad 🎄";
-    } else if (month === 10 && day === 31) {
-      path = "/admin/halloween";
-      link.textContent = "Halloween 🎃";
-    } else if (month === 11 && day === 2) {
-      path = "/admin/dia-de-muertos";
-      link.textContent = "Día de Muertos 💀";
-    } else if (month === 12 && day === 31) {
-      path = "/admin/new-year";
-      link.textContent = "Año Nuevo 🎉";
-    } else if (month === 6 && day === 6) {
-      path = "/admin/birthday";
-      link.textContent = "Cumpleaños 🎂";
-    } else {
-      path = "/admin/special";
-      link.textContent = "Sorpresa 🎁";
-    }
-    link.setAttribute("href", path);
-  }
-</script>

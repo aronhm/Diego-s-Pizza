@@ -42,7 +42,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
         {
           httpOnly: true,
           path: "/",
-        }
+        },
       );
 
       context.locals.user = sessionData.user;

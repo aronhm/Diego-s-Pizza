@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Fondo nocturno con degradado */
 .bg-night {
   background: linear-gradient(180deg, #0a0f30 0%, #1b1f4b 100%);
@@ -51,7 +50,7 @@
 }
 
 .bg-floral {
-  background-image: url('/images/flowers.png'); /* Pon tu imagen de flores en la carpeta public */
+  background-image: url("/images/flowers.png"); /* Pon tu imagen de flores en la carpeta public */
   background-size: cover;
   background-position: center;
 }

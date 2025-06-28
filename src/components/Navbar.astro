@@ -2,38 +2,75 @@
 const user = {
   name: "Admin",
   role: "Admin",
-  avatar: "https://w7.pngwing.com/pngs/205/731/png-transparent-default-avatar.png",
+  avatar:
+    "https://w7.pngwing.com/pngs/205/731/png-transparent-default-avatar.png",
 };
 ---
 
-<nav class="navbar fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-lg rounded-none shadow-lg shadow-black/10">
+<nav
+  class="navbar fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-lg rounded-none shadow-lg shadow-black/10"
+>
   <div class="navbar-start">
-    <div class="dropdown relative inline-flex [--auto-close:inside] [--offset:9]">
-      <button id="dropdown-menu" type="button" class="dropdown-toggle btn btn-text btn-circle dropdown-open:bg-black/40 dropdown-open:text-base-content" aria-haspopup="menu" aria-expanded="false" aria-label="Menú">
+    <div
+      class="dropdown relative inline-flex [--auto-close:inside] [--offset:9]"
+    >
+      <button
+        id="dropdown-menu"
+        type="button"
+        class="dropdown-toggle btn btn-text btn-circle dropdown-open:bg-black/40 dropdown-open:text-base-content"
+        aria-haspopup="menu"
+        aria-expanded="false"
+        aria-label="Menú"
+      >
         <span class="icon-[tabler--menu-2] size-5"></span>
       </button>
-      <ul class="dropdown-menu dropdown-open:opacity-100 hidden bg-black/80 backdrop-blur-lg shadow-md rounded-lg" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-menu">
-        <li><a id="special-date-link" class="dropdown-item" href="">Evento Especial</a></li>
+      <ul
+        class="dropdown-menu dropdown-open:opacity-100 hidden bg-black/80 backdrop-blur-lg shadow-md rounded-lg"
+        role="menu"
+        aria-orientation="vertical"
+        aria-labelledby="dropdown-menu"
+      >
+        <li>
+          <a id="special-date-link" class="dropdown-item" href=""
+            >Evento Especial</a>
+        </li>
       </ul>
     </div>
   </div>
 
   <div class="navbar-center flex items-center">
-    <a class="link text-base-content link-neutral text-xl font-semibold no-underline" href="/admin/dashboard">
+    <a
+      class="link text-base-content link-neutral text-xl font-semibold no-underline"
+      href="/admin/dashboard"
+    >
       Inicio
     </a>
   </div>
 
   <div class="navbar-end items-center gap-4">
-    <div class="dropdown relative inline-flex [--auto-close:inside] [--offset:8] [--placement:bottom-end]">
-      <button id="dropdown-avatar" type="button" class="dropdown-toggle flex items-center" aria-haspopup="menu" aria-expanded="false" aria-label="Perfil">
+    <div
+      class="dropdown relative inline-flex [--auto-close:inside] [--offset:8] [--placement:bottom-end]"
+    >
+      <button
+        id="dropdown-avatar"
+        type="button"
+        class="dropdown-toggle flex items-center"
+        aria-haspopup="menu"
+        aria-expanded="false"
+        aria-label="Perfil"
+      >
         <div class="avatar">
           <div class="w-10 rounded-full">
             <img src={user.avatar} alt="Avatar de {user.name}" />
           </div>
         </div>
       </button>
-      <ul class="dropdown-menu dropdown-open:opacity-100 hidden min-w-60 bg-black/80 backdrop-blur-lg shadow-md rounded-lg" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-avatar">
+      <ul
+        class="dropdown-menu dropdown-open:opacity-100 hidden min-w-60 bg-black/80 backdrop-blur-lg shadow-md rounded-lg"
+        role="menu"
+        aria-orientation="vertical"
+        aria-labelledby="dropdown-avatar"
+      >
         <li class="dropdown-header gap-2">
           <div class="avatar">
             <div class="w-10 rounded-full">
@@ -41,7 +78,9 @@ const user = {
             </div>
           </div>
           <div>
-            <h6 class="text-base-content text-base font-semibold">{user.name}</h6>
+            <h6 class="text-base-content text-base font-semibold">
+              {user.name}
+            </h6>
             <small class="text-base-content/50">{user.role}</small>
           </div>
         </li>
@@ -55,7 +94,6 @@ const user = {
     </div>
   </div>
 </nav>
-
 
 <script>
   const link = document.getElementById("special-date-link");
@@ -87,7 +125,7 @@ const user = {
     } else if (month === 6 && day === 6) {
       path = "/admin/birthday";
       link.textContent = "Cumpleaños 🎂";
-    } else{
+    } else {
       path = "/admin/special";
       link.textContent = "Sorpresa 🎁";
     }

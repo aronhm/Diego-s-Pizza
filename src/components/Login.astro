@@ -1,17 +1,26 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <div class="relative flex items-center justify-center min-h-screen bg-night text-center overflow-hidden">
-    
+  <div
+    class="relative flex items-center justify-center min-h-screen bg-night text-center overflow-hidden"
+  >
     <!-- Video de fondo -->
-    <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="absolute top-0 left-0 w-full h-full object-cover"
+    >
       <source src="/bg.mp4" type="video/mp4" />
     </video>
 
     <!-- Contenedor del formulario -->
-    <div class="p-8 form-container shadow-lg rounded-xl text-white w-96 animate-fadeIn z-10 relative bg-floral bg-opacity-80 backdrop-blur-md">
+    <div
+      class="p-8 form-container shadow-lg rounded-xl text-white w-96 animate-fadeIn z-10 relative bg-floral bg-opacity-80 backdrop-blur-md"
+    >
       <h1 class="text-3xl font-bold">Iniciar Sesión</h1>
       <p class="mt-4 text-lg">Accede para ver la sorpresa ❤️</p>
 

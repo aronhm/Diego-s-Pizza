@@ -1,58 +1,121 @@
----
-import BaseLayout from "../layouts/BaseLayout.astro";
----
+<title>Login</title>
+<div
+  class="flex min-h-screen flex-col justify-center items-center px-6 py-12 bg-gradient-to-br from-gray-900 via-gray-800 to-black"
+>
+  <div class="sm:w-full sm:max-w-md text-center">
+    <!-- Imagen con animación -->
+    <img
+      class="mx-auto h-32 w-auto animate-bounce-slow"
+      src="/logo.png"
+      alt="Sombrero de Graduación"
+    />
+    <h2 class="mt-4 text-3xl font-extrabold text-white animate-fade-in">
+      Bienvenido
+    </h2>
+    <p class="mt-2 text-lg text-gray-300 animate-fade-in">
+      Sistema de Inventario de Productos
+    </p>
+  </div>
 
-<BaseLayout>
-  <div
-    class="relative flex items-center justify-center min-h-screen bg-night text-center overflow-hidden"
-  >
-
-    <!-- Contenedor del formulario -->
-    <div
-      class="p-8 form-container shadow-lg rounded-xl text-white w-96 animate-fadeIn z-10 relative bg-floral bg-opacity-80 backdrop-blur-md"
+  <div class="mt-8 sm:w-full sm:max-w-md">
+    <form
+      class="space-y-6 bg-gray-800 p-8 rounded-lg shadow-lg shadow-black/50 backdrop-blur-lg animate-slide-up"
+      id="login"
+      method="POST"
     >
-      <h1 class="text-3xl font-bold">Iniciar Sesión</h1>
-      <p class="mt-4 text-lg">Accede para ver la sorpresa ❤️</p>
-
-      <form method="POST" id="login" class="flex flex-col gap-5 mt-6">
-        <label class="form-control w-full">
-          <div class="label">
-            <span class="label-text text-white">Email</span>
-          </div>
+      <div>
+        <label for="email" class="block text-lg font-medium text-white">
+          Correo
+        </label>
+        <div class="mt-2">
           <input
             type="text"
             id="identifier"
             name="identifier"
-            placeholder="example@gmail.com"
-            class="input-custom w-full"
+            placeholder="Ingresa tu correo"
+            class="w-full p-3 rounded-md bg-gray-700 text-white placeholder-gray-400 border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-transform duration-300 hover:scale-105"
             required
           />
-        </label>
+        </div>
+      </div>
 
-        <label class="form-control w-full">
-          <div class="label">
-            <span class="label-text text-white">Password</span>
-          </div>
+      <div>
+        <label for="password" class="block text-lg font-medium text-white">
+          Contraseña
+        </label>
+        <div class="mt-2">
           <input
             type="password"
             id="password"
             name="password"
-            placeholder="password"
-            class="input-custom w-full"
+            placeholder="Ingresa tu contraseña"
+            class="w-full p-3 rounded-md bg-gray-700 text-white placeholder-gray-400 border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-transform duration-300 hover:scale-105"
             required
           />
-        </label>
+        </div>
+      </div>
 
-        <button class="btn-primary waves waves-light">Login</button>
+      <button
+        class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+        type="submit"
+      >
+        Iniciar sesión
+      </button>
+    </form>
 
-        <div id="login-error-content" class="text-red-400 mt-2"></div>
-      </form>
-    </div>
+    <!-- Contenedor para mostrar errores -->
+    <div id="login-error-content" class="mt-4 text-red-500 text-center"></div>
   </div>
-</BaseLayout>
+</div>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounceSlow {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 1s ease-in-out;
+  }
+
+  .animate-bounce-slow {
+    animation: bounceSlow 3s infinite;
+  }
+</style>
 
 <script>
-  import { actions} from "astro:actions";
+  import { actions, isInputError } from "astro:actions";
 
   const form = document.getElementById("login");
   const errorContent = document.getElementById("login-error-content");
@@ -69,10 +132,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       if (error && errorContent instanceof HTMLElement) {
         errorContent.innerHTML = "";
 
-        const errorMessage = document.createElement("p");
-        errorMessage.className = "text-red-400";
-        errorMessage.innerText = "Error: " + error.message;
-        errorContent.appendChild(errorMessage);
+        if (isInputError(error)) {
+          const ul = document.createElement("ul");
+          error.issues.forEach((err) => {
+            const li = document.createElement("li");
+            li.innerText = err.message;
+            ul.appendChild(li);
+          });
+
+          errorContent.appendChild(ul);
+          return;
+        }
+        errorContent.innerText = error.message;
       }
     });
   }

@@ -1,67 +1,45 @@
+@import "flatpickr/dist/flatpickr.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Fondo nocturno con degradado */
-.bg-night {
-  background: linear-gradient(180deg, #0a0f30 0%, #1b1f4b 100%);
-  position: relative;
-  overflow: hidden;
+/* 🎨 Paleta de colores para entorno escolar */
+:root {
+  --primary-bg: #1c1f2e; /* Fondo oscuro */
+  --secondary-bg: #232634; /* Fondo secundario */
+  --accent-color: #4a90e2; /* Azul profesional */
+  --accent-color-hover: #357abd; /* Azul más oscuro para hover */
+  --text-light: #e5e7eb; /* Texto claro */
+  --hover-bg: #303446; /* Fondo hover */
 }
 
-/* Estilo de formulario oscuro */
-.form-container {
-  background: rgba(20, 20, 50, 0.85); /* Oscuro con transparencia */
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+/* 📌 Íconos principales */
+.icon-[tabler--menu-2],
+.icon-[tabler--home],
+.icon-[tabler--user],
+.icon-[tabler--calendar],
+.icon-[tabler--report],
+.icon-[tabler--logout-2] {
+  @apply text-[var(--accent-color)] transition-transform duration-200;
 }
 
-/* Inputs oscuros con brillo */
-.input-custom {
-  @apply bg-gray-900 text-white border border-gray-600 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none;
+/* 📌 Efecto hover en íconos */
+li:hover .icon-[tabler--menu-2],
+li:hover .icon-[tabler--home],
+li:hover .icon-[tabler--user],
+li:hover .icon-[tabler--calendar],
+li:hover .icon-[tabler--report],
+li:hover .icon-[tabler--logout-2] {
+  @apply text-white scale-110;
 }
 
-/* Botón con efecto de brillo */
-.btn-primary {
-  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 hover:shadow-lg transition-all duration-300;
-  box-shadow: 0 0 10px rgba(0, 162, 255, 0.5);
+/* 📌 Dropdown personalizado */
+.dropdown-menu {
+  @apply bg-black/80 backdrop-blur-lg shadow-md rounded-lg;
 }
 
-/* Animación de estrellas */
-@keyframes falling-stars {
-  from {
-    transform: translateY(-100vh) translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(100vh) translateX(-20vw);
-    opacity: 0;
-  }
-}
-
-.star {
-  position: absolute;
-  width: 2px;
-  height: 10px;
-  background: white;
-  opacity: 0.8;
-  animation: falling-stars linear infinite;
-}
-
-.bg-floral {
-  background-image: url("/images/flowers.png"); /* Pon tu imagen de flores en la carpeta public */
-  background-size: cover;
-  background-position: center;
-}
-/* Botón de cerrar */
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: red;
+/* 📌 Avatar redondo */
+.avatar img {
+  @apply rounded-full;
 }

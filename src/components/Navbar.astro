@@ -32,10 +32,10 @@ const user = {
         aria-labelledby="dropdown-menu"
       >
         <li>
-          <a class="dropdown-item" href="/dashboard">Inicio</a>
-          <a class="dropdown-item" href="/menu">Menú</a>
-          <a class="dropdown-item" href="/promociones">Promociones</a>
-          <a class="dropdown-item" href="/contacto">Contacto</a>
+          <a class="dropdown-item hover:bg-emerald-500/20" href="/dashboard">Inicio</a>
+          <a class="dropdown-item hover:bg-emerald-500/20" href="/menu">Menú</a>
+          <a class="dropdown-item hover:bg-emerald-500/20" href="/promociones">Promociones</a>
+          <a class="dropdown-item hover:bg-emerald-500/20" href="/contacto">Contacto</a>
         </li>
       </ul>
     </div>
@@ -44,21 +44,44 @@ const user = {
   <!-- Links principales en el centro -->
   <div class="navbar-center flex items-center gap-6">
     <a
-      class="link text-base-content link-neutral text-lg font-medium no-underline"
+      class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
+      after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400 
+      after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
       href="/dashboard"
     >
       Inicio
     </a>
-    <a class="link text-base-content link-neutral text-lg no-underline" href="/menu">Menú</a>
-    <a class="link text-base-content link-neutral text-lg no-underline" href="/promociones">Promociones</a>
-    <a class="link text-base-content link-neutral text-lg no-underline" href="/contacto">Contacto</a>
+    <a
+      class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
+      after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400 
+      after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
+      href="/menu"
+    >
+      Menú
+    </a>
+    <a
+      class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
+      after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400 
+      after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
+      href="/promociones"
+    >
+      Promociones
+    </a>
+    <a
+      class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
+      after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400 
+      after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
+      href="/contacto"
+    >
+      Contacto
+    </a>
   </div>
 
   <!-- Botones de búsqueda, carrito y perfil -->
   <div class="navbar-end items-center gap-4">
     <!-- Botón búsqueda -->
     <button
-      class="btn btn-circle btn-ghost"
+      class="btn btn-circle btn-ghost hover:bg-emerald-500/20 transition duration-300"
       onclick="document.getElementById('modal-busqueda').showModal()"
       aria-label="Buscar"
     >
@@ -83,7 +106,11 @@ const user = {
     </dialog>
 
     <!-- Botón carrito -->
-    <a href="/carrito" class="btn btn-circle btn-ghost" aria-label="Carrito">
+    <a
+      href="/carrito"
+      class="btn btn-circle btn-ghost hover:bg-emerald-500/20 transition duration-300"
+      aria-label="Carrito"
+    >
       <span class="icon-[tabler--shopping-cart] size-5"></span>
     </a>
 
@@ -100,7 +127,7 @@ const user = {
         aria-label="Perfil"
       >
         <div class="avatar">
-          <div class="w-10 rounded-full">
+          <div class="w-10 rounded-full ring-2 ring-transparent hover:ring-emerald-400 transition duration-300">
             <img src={user.avatar} alt="Avatar de {user.name}" />
           </div>
         </div>

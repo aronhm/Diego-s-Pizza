@@ -9,21 +9,109 @@ const user = {
 
 <title>Inicio - Inventario</title>
 <BaseLayout>
-  {/* Navbar con separacion del contenido principal */}
+  {/* Navbar con separación del contenido principal */}
   <Nav />
 
-  {/* Contenido principal con separacion del navbar */}
-  <main
-    class="flex-1 p-4 mt-20 bg-gray-100 dark:bg-gray-900 transition-colors duration-300"
-  >
+  {/* Contenido principal con separación del navbar */}
+  <main class="flex-1 mt-20 bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
     <div class="container mx-auto">
       <h1 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">
         Bienvenido, {user.name}!
       </h1>
-      <p class="text-gray-600 dark:text-gray-300">
-        Aquí puedes gestionar el inventario de productos.
-      </p>
-      /* Puedes agregar más contenido aquí, como gráficos, tablas, etc. */
     </div>
+
+    {/* Carrusel infinito */}
+    <div class="relative w-full overflow-hidden">
+      {/* Slides */}
+      <div
+        id="carousel"
+        class="flex transition-transform duration-700"
+        style="transform: translateX(-100%)"
+      >
+        {/* Clon del último para loop */}
+        <img src="/pizza3.png" class="w-full flex-shrink-0 object-cover h-[400px]" alt="Pizza 3" />
+        
+        <img src="/pizza1.jpeg" class="w-full flex-shrink-0 object-cover h-[400px]" alt="Pizza 1" />
+        <img src="/pizza2.png" class="w-full flex-shrink-0 object-cover h-[400px]" alt="Pizza 2" />
+        <img src="/pizza3.png" class="w-full flex-shrink-0 object-cover h-[400px]" alt="Pizza 3" />
+        
+        {/* Clon del primero para loop */}
+        <img src="/pizza1.jpeg" class="w-full flex-shrink-0 object-cover h-[400px]" alt="Pizza 1" />
+      </div>
+
+      {/* Botón anterior */}
+      <button
+        id="prev"
+        class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition"
+      >
+        ❮
+      </button>
+
+      {/* Botón siguiente */}
+      <button
+        id="next"
+        class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition"
+      >
+        ❯
+      </button>
+    </div>
+
+    {/* Script para loop infinito */}
+  <script>
+    (function () {
+      const carousel = document.getElementById('carousel') as HTMLDivElement | null;
+      const btnPrev = document.getElementById('prev') as HTMLButtonElement | null;
+      const btnNext = document.getElementById('next') as HTMLButtonElement | null;
+
+      if (!carousel || !btnPrev || !btnNext) return;
+
+      const slides = carousel.children;
+      const slidesCount = slides.length;
+      let index = 1;
+      let isAnimating = false;
+
+      carousel!.style.transition = 'transform 0.7s ease';
+      carousel!.style.transform = `translateX(-${index * 100}%)`;
+
+      function updateTransform() {
+        carousel!.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      function moveTo(i: number) {
+        if (isAnimating) return;
+        isAnimating = true;
+        index = i;
+        carousel!.style.transition = 'transform 0.7s ease';
+        updateTransform();
+      }
+
+      btnNext!.addEventListener('click', () => moveTo(index + 1));
+      btnPrev!.addEventListener('click', () => moveTo(index - 1));
+
+      carousel!.addEventListener('transitionend', () => {
+        if (index >= slidesCount - 1) {
+          carousel!.style.transition = 'none';
+          index = 1;
+          carousel!.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        if (index <= 0) {
+          carousel!.style.transition = 'none';
+          index = slidesCount - 2;
+          carousel!.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        setTimeout(() => {
+          carousel!.style.transition = 'transform 0.7s ease';
+          isAnimating = false;
+        }, 20);
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') btnPrev!.click();
+        if (e.key === 'ArrowRight') btnNext!.click();
+      });
+    })();
+  </script>
   </main>
 </BaseLayout>

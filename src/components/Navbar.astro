@@ -10,6 +10,7 @@ const user = {
 <nav
   class="navbar h-20 fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-lg shadow-lg shadow-black/10"
 >
+  <!-- Menú lateral desplegable -->
   <div class="navbar-start">
     <div
       class="dropdown relative inline-flex [--auto-close:inside] [--offset:9]"
@@ -31,23 +32,62 @@ const user = {
         aria-labelledby="dropdown-menu"
       >
         <li>
-          <a id="special-date-link" class="dropdown-item" href="#">example</a>
-          <a id="special-date-link" class="dropdown-item" href="#">example</a>
+          <a class="dropdown-item" href="/dashboard">Inicio</a>
+          <a class="dropdown-item" href="/menu">Menú</a>
+          <a class="dropdown-item" href="/promociones">Promociones</a>
+          <a class="dropdown-item" href="/contacto">Contacto</a>
         </li>
       </ul>
     </div>
   </div>
 
-  <div class="navbar-center flex items-center">
+  <!-- Links principales en el centro -->
+  <div class="navbar-center flex items-center gap-6">
     <a
-      class="link text-base-content link-neutral text-xl font-semibold no-underline"
-      href="/admin/dashboard"
+      class="link text-base-content link-neutral text-lg font-medium no-underline"
+      href="/dashboard"
     >
       Inicio
     </a>
+    <a class="link text-base-content link-neutral text-lg no-underline" href="/menu">Menú</a>
+    <a class="link text-base-content link-neutral text-lg no-underline" href="/promociones">Promociones</a>
+    <a class="link text-base-content link-neutral text-lg no-underline" href="/contacto">Contacto</a>
   </div>
 
+  <!-- Botones de búsqueda, carrito y perfil -->
   <div class="navbar-end items-center gap-4">
+    <!-- Botón búsqueda -->
+    <button
+      class="btn btn-circle btn-ghost"
+      onclick="document.getElementById('modal-busqueda').showModal()"
+      aria-label="Buscar"
+    >
+      <span class="icon-[tabler--search] size-5"></span>
+    </button>
+
+    <!-- Modal de búsqueda -->
+    <dialog id="modal-busqueda" class="modal">
+      <div class="modal-box bg-black/90 text-white rounded-lg">
+        <h3 class="font-bold text-lg mb-4">Buscar productos</h3>
+        <input
+          type="text"
+          placeholder="Escribe el nombre de un producto..."
+          class="input input-bordered w-full"
+        />
+        <div class="modal-action">
+          <form method="dialog">
+            <button class="btn">Cerrar</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Botón carrito -->
+    <a href="/carrito" class="btn btn-circle btn-ghost" aria-label="Carrito">
+      <span class="icon-[tabler--shopping-cart] size-5"></span>
+    </a>
+
+    <!-- Avatar usuario -->
     <div
       class="dropdown relative inline-flex [--auto-close:inside] [--offset:8] [--placement:bottom-end]"
     >

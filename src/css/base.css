@@ -1,45 +1,181 @@
-@import "flatpickr/dist/flatpickr.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-/* 🎨 Paleta de colores para entorno escolar */
 :root {
-  --primary-bg: #1c1f2e; /* Fondo oscuro */
-  --secondary-bg: #232634; /* Fondo secundario */
-  --accent-color: #4a90e2; /* Azul profesional */
-  --accent-color-hover: #357abd; /* Azul más oscuro para hover */
-  --text-light: #e5e7eb; /* Texto claro */
-  --hover-bg: #303446; /* Fondo hover */
+  --new-yellow-100: #fff3d1;
+  --new-yellow-200: #ffe7a3;
+  --new-yellow-300: #ffda75;
+  --new-yellow-400: #ffce47;
+  --new-yellow-500: #ffc219;
+  --new-yellow-600: #cc9b14;
+  --new-yellow-700: #99740f;
+  --new-yellow-800: #664e0a;
+  --new-yellow-900: #332705;
+
+  --accent-50: #f6f6f6;
+  --accent-100: #e7e7e7;
+  --accent-200: #d1d1d1;
+  --accent-300: #b0b0b0;
+  --accent-400: #888888;
+  --accent-500: #6d6d6d;
+  --accent-600: #5d5d5d;
+  --accent-700: #4f4f4f;
+  --accent-800: #454545;
+
+  --background-900: #000;
+
+  --text-primary: #ffffff;
+  --error: #e44f4f;
+  --scroll-border: 0.1px solid rgba(128, 128, 128, 0.2);
+
+  --header-h1: 4rem;
+  --header-h2: 2.5rem;
+  --header-h3: 1.5rem;
+  --header-h4: 1.25rem;
+
+  --body-regular: 1rem;
+  --body-bold: 1rem;
+  --body-small: 0.88rem;
+
+  --button-text: 0.75rem;
+  --link-text: 1rem;
+
+  --font-heading: "Oswald", sans-serif;
+  --font-body: "Work Sans", sans-serif;
+  --section-spacing: 6rem;
+  --font-handwriting: "Covered By Your Grace", sans-serif;
 }
 
-/* 📌 Íconos principales */
-.icon-[tabler--menu-2],
-.icon-[tabler--home],
-.icon-[tabler--user],
-.icon-[tabler--calendar],
-.icon-[tabler--report],
-.icon-[tabler--logout-2] {
-  @apply text-[var(--accent-color)] transition-transform duration-200;
+html {
+  min-height: 100%;
 }
 
-/* 📌 Efecto hover en íconos */
-li:hover .icon-[tabler--menu-2],
-li:hover .icon-[tabler--home],
-li:hover .icon-[tabler--user],
-li:hover .icon-[tabler--calendar],
-li:hover .icon-[tabler--report],
-li:hover .icon-[tabler--logout-2] {
-  @apply text-white scale-110;
+body {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 400;
+  font-size: var(--body-regular);
+  line-height: 140%;
+  color: var(--text-primary);
+  background-color: var(--primary-500);
 }
 
-/* 📌 Dropdown personalizado */
-.dropdown-menu {
-  @apply bg-black/80 backdrop-blur-lg shadow-md rounded-lg;
+body.grid {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
-/* 📌 Avatar redondo */
-.avatar img {
-  @apply rounded-full;
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+button,
+.btn {
+  outline: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: var(--button-text);
+  line-height: 19px;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+  background-color: var(--new-yellow-500);
+  color: var(--text-primary);
+}
+
+button:disabled {
+  background-color: var(--new-yellow-400);
+  color: var(--text-primary);
+  cursor: not-allowed;
+}
+
+a,
+input,
+textarea,
+p,
+select,
+li {
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: var(--header-h1);
+}
+
+h2 {
+  font-size: var(--header-h2);
+}
+
+h3 {
+  font-size: var(--header-h3);
+}
+
+h4,
+h5,
+h6 {
+  font-size: var(--header-h4);
+}
+
+.text-small {
+  font-size: var(--body-small);
+}
+
+.text-bold {
+  font-weight: 700;
+  font-size: var(--body-bold);
+}
+
+@media only screen and (max-width: 1140px) {
+  .wrapper {
+    max-width: 100%;
+    padding: 0 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .wrapper {
+    padding: 0 15px;
+  }
 }

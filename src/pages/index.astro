@@ -1,3 +1,11 @@
 ---
-return Astro.redirect("/admin/dashboard");
+import Layout from "$/layouts/BaseLayout.astro";
+import Nav from "$/components/Navbar.astro";
+import Hero from "$/components/home/Hero.astro";
 ---
+<Layout title="PIZZAS DIEGO">
+  <Nav />
+  <main>
+    <Hero />
+  </main>
+</Layout>

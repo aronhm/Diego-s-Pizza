@@ -1,17 +1,11 @@
----
-const user = {
-  name: "Admin",
-  role: "Admin",
-  avatar:
-    "https://w7.pngwing.com/pngs/205/731/png-transparent-default-avatar.png",
-};
----
-
-<nav class="navbar h-20 fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-lg shadow-lg shadow-black/10 px-6">
-
+<nav
+  class="navbar h-20 fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-lg shadow-lg shadow-black/10 px-6"
+>
   <div class="navbar-start flex items-center gap-4">
     <!-- Menú desplegable -->
-    <div class="dropdown relative inline-flex [--auto-close:inside] [--offset:9]">
+    <div
+      class="dropdown relative inline-flex [--auto-close:inside] [--offset:9]"
+    >
       <button
         id="dropdown-menu"
         type="button"
@@ -42,44 +36,16 @@ const user = {
         </li>
       </ul>
     </div>
-  <!-- Links principales en el centro -->
-  <div class="navbar-center flex items-center gap-6">
-    <a
-      class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
-      after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400
-      after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
-      href="/dashboard"
-    >
-      Inicio
-    </a>
-    <a
-      class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
-      after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400
-      after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
-      href="/menu"
-    >
-      Menú
-    </a>
-    <a
-      class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
-      after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400
-      after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
-      href="/promociones"
-    >
-      Promociones
-    </a>
-    <a
-      class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
-      after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400
-      after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
-      href="/contacto"
-    >
-      Contacto
-
     <!-- Logo + Nombre -->
     <a href="/" class="flex items-center gap-3">
-      <img src="/logotransparente.png" alt="Logo Empresa" class="h-10 w-10 object-contain rounded-md" />
-      <span class="text-white font-semibold text-lg hover:text-emerald-400 transition">
+      <img
+        src="/logotransparente.png"
+        alt="Logo Empresa"
+        class="h-10 w-10 object-contain rounded-md"
+      />
+      <span
+        class="text-white font-semibold text-lg hover:text-emerald-400 transition"
+      >
         Diego's Pizza
       </span>
     </a>
@@ -92,64 +58,43 @@ const user = {
       <a
         href="/dashboard"
         class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
-               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400 
+               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400
                after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
-      >Inicio</a>
+        >Inicio</a
+      >
 
-       <a
+      <a
         href="/crea-tu-pizza"
         class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
-               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400 
+               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400
                after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
-      >Crea tu Pizza</a>     
+        >Crea tu Pizza</a
+      >
 
       <a
         href="/menu"
         class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
-               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400 
+               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400
                after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
-      >Menú</a>
+        >Menú</a
+      >
 
       <a
         href="/promociones"
         class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
-               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400 
+               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400
                after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
-      >Promociones</a>
+        >Promociones</a
+      >
 
       <a
         href="/contacto"
         class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
-               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400 
+               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400
                after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
-      >Contacto</a>
+        >Contacto</a
+      >
     </div>
-
-    <!-- Botón búsqueda -->
-    <button
-      class="btn btn-circle btn-ghost hover:bg-emerald-500/20 transition duration-300"
-      onclick="document.getElementById('modal-busqueda').showModal()"
-      aria-label="Buscar"
-    >
-      <span class="icon-[tabler--search] size-5"></span>
-    </button>
-
-    <!-- Modal búsqueda -->
-    <dialog id="modal-busqueda" class="modal">
-      <div class="modal-box bg-black/90 text-white rounded-lg">
-        <h3 class="font-bold text-lg mb-4">Buscar productos</h3>
-        <input
-          type="text"
-          placeholder="Escribe el nombre de un producto..."
-          class="input input-bordered w-full"
-        />
-        <div class="modal-action">
-          <form method="dialog">
-            <button class="btn">Cerrar</button>
-          </form>
-        </div>
-      </div>
-    </dialog>
 
     <!-- Carrito -->
     <a
@@ -160,50 +105,5 @@ const user = {
       <span class="icon-[tabler--shopping-cart] w-6 h-6 text-emerald-600"
       ></span>
     </a>
-
-    <!-- Avatar -->
-    <div class="dropdown relative inline-flex [--auto-close:inside] [--offset:8] [--placement:bottom-end]">
-      <button
-        id="dropdown-avatar"
-        type="button"
-        class="dropdown-toggle flex items-center"
-        aria-haspopup="menu"
-        aria-expanded="false"
-        aria-label="Perfil"
-      >
-        <div class="avatar">
-          <div
-            class="w-10 rounded-full ring-2 ring-transparent hover:ring-emerald-400 transition duration-300"
-          >
-            <img src={user.avatar} alt="Avatar de {user.name}" />
-          </div>
-        </div>
-      </button>
-
-      <ul
-        class="dropdown-menu dropdown-open:opacity-100 hidden min-w-60 bg-black/80 backdrop-blur-lg shadow-md rounded-lg"
-        role="menu"
-        aria-orientation="vertical"
-        aria-labelledby="dropdown-avatar"
-      >
-        <li class="dropdown-header gap-2">
-          <div class="avatar">
-            <div class="w-10 rounded-full">
-              <img src={user.avatar} alt="Avatar de {user.name}" />
-            </div>
-          </div>
-          <div>
-            <h6 class="text-base-content text-base font-semibold">{user.name}</h6>
-            <small class="text-base-content/50">{user.role}</small>
-          </div>
-        </li>
-        <li class="dropdown-footer gap-2">
-          <a class="btn btn-error btn-soft btn-block" href="/logout">
-            <span class="icon-[tabler--logout]"></span>
-            Cerrar sesión
-          </a>
-        </li>
-      </ul>
-    </div>
   </div>
 </nav>

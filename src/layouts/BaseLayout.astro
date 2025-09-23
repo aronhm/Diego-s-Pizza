@@ -1,16 +1,39 @@
 ---
 import "../css/base.css";
+//import Footer from "../components/Footer.astro";
+
+type Props = {
+  title: string;
+  includeRecaptcha?: boolean;
+};
+
+const { title, includeRecaptcha = false } = Astro.props;
+
+const reCaptchaPublicKey = import.meta.env.PUBLIC_RECAPTCHA_KEY || "";
 ---
 
-<html lang="es" class="h-full">
+<!doctype html>
+<html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    {
+      includeRecaptcha && (
+        <script
+          is:inline
+          src={`https://www.google.com/recaptcha/api.js?render=${reCaptchaPublicKey}`}
+          async
+          defer
+        />
+      )
+    }
+
+    <title>{title}</title>
   </head>
-  <body class="h-full flex flex-col">
+  <body>
     <slot />
-    <script src="../../node_modules/flyonui/flyonui.js"></script>
+    {/* <Footer /> */}
   </body>
 </html>

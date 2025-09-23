@@ -32,10 +32,16 @@ const user = {
         aria-labelledby="dropdown-menu"
       >
         <li>
-          <a class="dropdown-item hover:bg-emerald-500/20" href="/dashboard">Inicio</a>
+          <a class="dropdown-item hover:bg-emerald-500/20" href="/dashboard"
+            >Inicio</a
+          >
           <a class="dropdown-item hover:bg-emerald-500/20" href="/menu">Menú</a>
-          <a class="dropdown-item hover:bg-emerald-500/20" href="/promociones">Promociones</a>
-          <a class="dropdown-item hover:bg-emerald-500/20" href="/contacto">Contacto</a>
+          <a class="dropdown-item hover:bg-emerald-500/20" href="/promociones"
+            >Promociones</a
+          >
+          <a class="dropdown-item hover:bg-emerald-500/20" href="/contacto"
+            >Contacto</a
+          >
         </li>
       </ul>
     </div>
@@ -45,7 +51,7 @@ const user = {
   <div class="navbar-center flex items-center gap-6">
     <a
       class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
-      after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400 
+      after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400
       after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
       href="/dashboard"
     >
@@ -53,7 +59,7 @@ const user = {
     </a>
     <a
       class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
-      after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400 
+      after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400
       after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
       href="/menu"
     >
@@ -61,7 +67,7 @@ const user = {
     </a>
     <a
       class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
-      after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400 
+      after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400
       after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
       href="/promociones"
     >
@@ -69,7 +75,7 @@ const user = {
     </a>
     <a
       class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
-      after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400 
+      after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400
       after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
       href="/contacto"
     >
@@ -108,10 +114,11 @@ const user = {
     <!-- Botón carrito -->
     <a
       href="/carrito"
-      class="btn btn-circle btn-ghost hover:bg-emerald-500/20 transition duration-300"
+      class="btn btn-circle btn-ghost hover:bg-emerald-500/20 transition duration-300 flex items-center justify-center"
       aria-label="Carrito"
     >
-      <span class="icon-[tabler--shopping-cart] size-5"></span>
+      <span class="icon-[tabler--shopping-cart] w-6 h-6 text-emerald-600"
+      ></span>
     </a>
 
     <!-- Avatar usuario -->
@@ -127,7 +134,9 @@ const user = {
         aria-label="Perfil"
       >
         <div class="avatar">
-          <div class="w-10 rounded-full ring-2 ring-transparent hover:ring-emerald-400 transition duration-300">
+          <div
+            class="w-10 rounded-full ring-2 ring-transparent hover:ring-emerald-400 transition duration-300"
+          >
             <img src={user.avatar} alt="Avatar de {user.name}" />
           </div>
         </div>

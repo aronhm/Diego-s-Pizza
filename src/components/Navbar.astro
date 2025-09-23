@@ -7,14 +7,11 @@ const user = {
 };
 ---
 
-<nav
-  class="navbar h-20 fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-lg shadow-lg shadow-black/10"
->
-  <!-- Menú lateral desplegable -->
-  <div class="navbar-start">
-    <div
-      class="dropdown relative inline-flex [--auto-close:inside] [--offset:9]"
-    >
+<nav class="navbar h-20 fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-lg shadow-lg shadow-black/10 px-6">
+
+  <div class="navbar-start flex items-center gap-4">
+    <!-- Menú desplegable -->
+    <div class="dropdown relative inline-flex [--auto-close:inside] [--offset:9]">
       <button
         id="dropdown-menu"
         type="button"
@@ -45,8 +42,8 @@ const user = {
         </li>
       </ul>
     </div>
-  </div>
 
+<<<<<<< HEAD
   <!-- Links principales en el centro -->
   <div class="navbar-center flex items-center gap-6">
     <a
@@ -80,11 +77,57 @@ const user = {
       href="/contacto"
     >
       Contacto
+=======
+    <!-- Logo + Nombre -->
+    <a href="/" class="flex items-center gap-3">
+      <img src="/logotransparente.png" alt="Logo Empresa" class="h-10 w-10 object-contain rounded-md" />
+      <span class="text-white font-semibold text-lg hover:text-emerald-400 transition">
+        Diego's Pizza
+      </span>
+>>>>>>> d4314825dc2cd76de1cfdc2e0155f038b21497a0
     </a>
   </div>
 
-  <!-- Botones de búsqueda, carrito y perfil -->
-  <div class="navbar-end items-center gap-4">
+  <!-- Links principales + acciones (derecha) -->
+  <div class="navbar-end flex items-center gap-4">
+    <!-- Links -->
+    <div class="hidden md:flex items-center gap-6">
+      <a
+        href="/dashboard"
+        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
+               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400 
+               after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
+      >Inicio</a>
+
+       <a
+        href="/crea-tu-pizza"
+        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
+               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400 
+               after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
+      >Crea tu Pizza</a>     
+
+      <a
+        href="/menu"
+        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
+               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400 
+               after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
+      >Menú</a>
+
+      <a
+        href="/promociones"
+        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
+               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400 
+               after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
+      >Promociones</a>
+
+      <a
+        href="/contacto"
+        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
+               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400 
+               after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
+      >Contacto</a>
+    </div>
+
     <!-- Botón búsqueda -->
     <button
       class="btn btn-circle btn-ghost hover:bg-emerald-500/20 transition duration-300"
@@ -94,7 +137,7 @@ const user = {
       <span class="icon-[tabler--search] size-5"></span>
     </button>
 
-    <!-- Modal de búsqueda -->
+    <!-- Modal búsqueda -->
     <dialog id="modal-busqueda" class="modal">
       <div class="modal-box bg-black/90 text-white rounded-lg">
         <h3 class="font-bold text-lg mb-4">Buscar productos</h3>
@@ -111,7 +154,7 @@ const user = {
       </div>
     </dialog>
 
-    <!-- Botón carrito -->
+    <!-- Carrito -->
     <a
       href="/carrito"
       class="btn btn-circle btn-ghost hover:bg-emerald-500/20 transition duration-300 flex items-center justify-center"
@@ -121,10 +164,8 @@ const user = {
       ></span>
     </a>
 
-    <!-- Avatar usuario -->
-    <div
-      class="dropdown relative inline-flex [--auto-close:inside] [--offset:8] [--placement:bottom-end]"
-    >
+    <!-- Avatar -->
+    <div class="dropdown relative inline-flex [--auto-close:inside] [--offset:8] [--placement:bottom-end]">
       <button
         id="dropdown-avatar"
         type="button"
@@ -141,6 +182,7 @@ const user = {
           </div>
         </div>
       </button>
+
       <ul
         class="dropdown-menu dropdown-open:opacity-100 hidden min-w-60 bg-black/80 backdrop-blur-lg shadow-md rounded-lg"
         role="menu"
@@ -154,9 +196,7 @@ const user = {
             </div>
           </div>
           <div>
-            <h6 class="text-base-content text-base font-semibold">
-              {user.name}
-            </h6>
+            <h6 class="text-base-content text-base font-semibold">{user.name}</h6>
             <small class="text-base-content/50">{user.role}</small>
           </div>
         </li>

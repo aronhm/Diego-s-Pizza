@@ -1,241 +1,83 @@
-<section class="hero-section">
-  {/* Carrusel infinito */}
-  <div class="relative w-full h-110vh overflow-hidden">
-    {/* Slides */}
+<section class="hero-section w-full font-sans">
+  <!-- 🔹 Tira Superior -->
+  <div class="w-full bg-red-700 py-1 px-6 flex items-center justify-between shadow-md">
+    <!-- Izquierda (Botón destacado) -->
+    <a 
+      href="/oferta-especial"
+      class="px-6 py-0.5 text-sm font-semibold text-white bg-yellow-500 rounded-full shadow-lg hover:bg-yellow-400 transition"
+    >
+      ¡Comienza tu pedido AQUÍ!
+    </a>
+
+    <!-- Derecha (dos enlaces simples) -->
+    <div class="flex gap-6">
+      <a 
+        href="/promo-2x1"
+        class="text-lg font-semibold text-white hover:text-yellow-300 transition"
+      >
+        2x1 en Pizzas
+      </a>
+      <a 
+        href="/bebida-gratis"
+        class="text-lg font-semibold text-white hover:text-yellow-300 transition"
+      >
+        Bebida Gratis
+      </a>
+    </div>
+  </div>
+
+  <!-- 🔹 Tira Inferior -->
+  <div class="w-full bg-green-700 py-3 px-6 flex items-center justify-center text-center">
+    <p class="text-lg font-bold text-white tracking-wide">
+      🍕 50% de DTO en toda la Carta con cupón <span class="text-yellow-300">50DTO</span> | 🚚 Hoy Delivery GRATIS desde <span class="text-yellow-300">S/23.90</span>.  
+      <span class="uppercase text-yellow-400">¡Exclusivo en Web!</span>
+    </p>
+  </div>
+
+  <!-- 🔹 Carrusel -->
+  <div class="relative w-full h-[70vh] overflow-hidden">
     <div
       id="carousel"
-      class="flex transition-transform duration-700"
+      class="flex transition-transform duration-700 ease-in-out"
       style="transform: translateX(-100%)"
     >
-      {/* Clon del último para loop */}
-      <img
-        src="/pizza3.png"
-        class="w-full flex-shrink-0 object-cover h-[400px]"
-        alt="Pizza 3"
-      />
+      <!-- Clon último -->
+      <img src="" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 4" />
 
-      <img
-        src="/pizza1.jpeg"
-        class="w-full flex-shrink-0 object-cover h-[400px]"
-        alt="Pizza 1"
-      />
-      <img
-        src="/pizza2.png"
-        class="w-full flex-shrink-0 object-cover h-[400px]"
-        alt="Pizza 2"
-      />
-      <img
-        src="/pizza2.png"
-        class="w-full flex-shrink-0 object-cover h-[400px]"
-        alt="Pizza 4"
-      />
-      <img
-        src="/pizza3.png"
-        class="w-full flex-shrink-0 object-cover h-[400px]"
-        alt="Pizza 3"
-      />
+      <!-- Slides -->
+      <img src="/banner1.jpg" class="w-full flex-shrink-0 object-cover h-[70vh] " alt="Pizza 1" />
+      <img src="" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 2" />
+      <img src="" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 3" />
+      <img src="" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 4" />
 
-      {/* Clon del primero para loop */}
-      <img
-        src="/pizza1.jpeg"
-        class="w-full flex-shrink-0 object-cover h-[400px]"
-        alt="Pizza 1"
-      />
+      <!-- Clon primero -->
+      <img src="" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 1" />
     </div>
 
-    {/* Botón anterior */}
+    <!-- Botones navegación -->
     <button
       id="prev"
-      class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition"
+      aria-label="Anterior"
+      class="absolute top-1/2 left-4 -translate-y-1/2 bg-red-600/70 text-white p-3 rounded-full shadow-md hover:bg-red-700 transition"
     >
       ❮
     </button>
-
-    {/* Botón siguiente */}
     <button
       id="next"
-      class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition"
+      aria-label="Siguiente"
+      class="absolute top-1/2 right-4 -translate-y-1/2 bg-red-600/70 text-white p-3 rounded-full shadow-md hover:bg-red-700 transition"
     >
       ❯
     </button>
   </div>
-  {/* Botones de promociones */}
-  <div class="grid grid-cols-2 gap-4 mt-6 max-w-md mx-auto">
-    <button
-      class="flex items-center gap-2 px-6 py-3 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition"
-    >
-      <img
-        src="https://www.sortirambnens.com/wp-content/uploads/2019/02/pizza-de-peperoni.jpg"
-        alt="Pizza de Peperoni"
-        class="w-40 h-40 object-cover rounded-lg"
-      />
-
-      <span class="text-lg font-semibold">Pizza de Peperoni</span>
-    </button>
-
-    <button
-      class="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition"
-    >
-      <img
-        src="https://www.sortirambnens.com/wp-content/uploads/2019/02/pizza-de-peperoni.jpg"
-        alt="Pizza de Peperoni"
-        class="w-40 h-40 object-cover rounded-lg"
-      />
-      <span class="text-lg font-semibold">Pizza de Peperoni</span>
-    </button>
-
-    <button
-      class="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition"
-    >
-      <img
-        src="https://www.sortirambnens.com/wp-content/uploads/2019/02/pizza-de-peperoni.jpg"
-        alt="Pizza de Peperoni"
-        class="w-40 h-40 object-cover rounded-lg"
-      />
-      <span class="text-lg font-semibold">Pizza de Peperoni</span>
-    </button>
-
-    <button
-      class="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition"
-    >
-      <img
-        src="https://www.sortirambnens.com/wp-content/uploads/2019/02/pizza-de-peperoni.jpg"
-        alt="Pizza de Peperoni"
-        class="w-40 h-40 object-cover rounded-lg"
-      />
-      <span class="text-lg font-semibold">Pizza de Peperoni</span>
-    </button>
-    <button
-      class="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition"
-    >
-      <img
-        src="https://www.sortirambnens.com/wp-content/uploads/2019/02/pizza-de-peperoni.jpg"
-        alt="Pizza de Peperoni"
-        class="w-40 h-40 object-cover rounded-lg"
-      />
-      <span class="text-lg font-semibold">Pizza de Peperoni</span>
-    </button>
-    <button
-      class="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition"
-    >
-      <img
-        src="https://www.sortirambnens.com/wp-content/uploads/2019/02/pizza-de-peperoni.jpg"
-        alt="Pizza de Peperoni"
-        class="w-40 h-40 object-cover rounded-lg"
-      />
-      <span class="text-lg font-semibold">Pizza de Peperoni</span>
-    </button>
-    <button
-      class="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition"
-    >
-      <img
-        src="https://www.sortirambnens.com/wp-content/uploads/2019/02/pizza-de-peperoni.jpg"
-        alt="Pizza de Peperoni"
-        class="w-40 h-40 object-cover rounded-lg"
-      />
-      <span class="text-lg font-semibold">Pizza de Peperoni</span>
-    </button>
-    <button
-      class="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition"
-    >
-      <img
-        src="https://www.sortirambnens.com/wp-content/uploads/2019/02/pizza-de-peperoni.jpg"
-        alt="Pizza de Peperoni"
-        class="w-40 h-40 object-cover rounded-lg"
-      />
-      <span class="text-lg font-semibold">Pizza de Peperoni</span>
-    </button>
-    <button
-      class="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition"
-    >
-      <img
-        src="https://www.sortirambnens.com/wp-content/uploads/2019/02/pizza-de-peperoni.jpg"
-        alt="Pizza de Peperoni"
-        class="w-40 h-40 object-cover rounded-lg"
-      />
-      <span class="text-lg font-semibold">Pizza de Peperoni</span>
-    </button>
-    <button
-      class="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition"
-    >
-      <img
-        src="https://www.sortirambnens.com/wp-content/uploads/2019/02/pizza-de-peperoni.jpg"
-        alt="Pizza de Peperoni"
-        class="w-40 h-40 object-cover rounded-lg"
-      />
-      <span class="text-lg font-semibold">Pizza de Peperoni</span>
-    </button>
-    <button
-      class="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition"
-    >
-      <img
-        src="https://www.sortirambnens.com/wp-content/uploads/2019/02/pizza-de-peperoni.jpg"
-        alt="Pizza de Peperoni"
-        class="w-40 h-40 object-cover rounded-lg"
-      />
-      <span class="text-lg font-semibold">Pizza de Peperoni</span>
-    </button>
-    <button
-      class="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition"
-    >
-      <img
-        src="https://www.sortirambnens.com/wp-content/uploads/2019/02/pizza-de-peperoni.jpg"
-        alt="Pizza de Peperoni"
-        class="w-40 h-40 object-cover rounded-lg"
-      />
-      <span class="text-lg font-semibold">Pizza de Peperoni</span>
-    </button>
-    <button
-      class="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition"
-    >
-      <img
-        src="https://www.sortirambnens.com/wp-content/uploads/2019/02/pizza-de-peperoni.jpg"
-        alt="Pizza de Peperoni"
-        class="w-40 h-40 object-cover rounded-lg"
-      />
-      <span class="text-lg font-semibold">Pizza de Peperoni</span>
-    </button>
-    <button
-      class="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition"
-    >
-      <img
-        src="https://www.sortirambnens.com/wp-content/uploads/2019/02/pizza-de-peperoni.jpg"
-        alt="Pizza de Peperoni"
-        class="w-40 h-40 object-cover rounded-lg"
-      />
-      <span class="text-lg font-semibold">Pizza de Peperoni</span>
-    </button>
-    <button
-      class="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition"
-    >
-      <img
-        src="https://www.sortirambnens.com/wp-content/uploads/2019/02/pizza-de-peperoni.jpg"
-        alt="Pizza de Peperoni"
-        class="w-40 h-40 object-cover rounded-lg"
-      />
-      <span class="text-lg font-semibold">Pizza de Peperoni</span>
-    </button>
-    <button
-      class="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition"
-    >
-      <img
-        src="https://www.sortirambnens.com/wp-content/uploads/2019/02/pizza-de-peperoni.jpg"
-        alt="Pizza de Peperoni"
-        class="w-40 h-40 object-cover rounded-lg"
-      />
-      <span class="text-lg font-semibold">Pizza de Peperoni</span>
-    </button>
-  </div>
 </section>
 
-{/* Script para loop infinito */}
+<!-- Script Carrusel -->
 <script>
   (function () {
-    const carousel = document.getElementById(
-      "carousel"
-    ) as HTMLDivElement | null;
-    const btnPrev = document.getElementById("prev") as HTMLButtonElement | null;
-    const btnNext = document.getElementById("next") as HTMLButtonElement | null;
+    const carousel = document.getElementById("carousel");
+    const btnPrev = document.getElementById("prev");
+    const btnNext = document.getElementById("next");
 
     if (!carousel || !btnPrev || !btnNext) return;
 
@@ -243,47 +85,67 @@
     const slidesCount = slides.length;
     let index = 1;
     let isAnimating = false;
-
-    carousel!.style.transition = "transform 0.7s ease";
-    carousel!.style.transform = `translateX(-${index * 100}%)`;
+    let autoSlide: ReturnType<typeof setInterval> | null = null;
 
     function updateTransform() {
-      carousel!.style.transform = `translateX(-${index * 100}%)`;
+      if (!carousel) return;
+      carousel.style.transform = `translateX(-${index * 100}%)`;
     }
 
     function moveTo(i: number) {
       if (isAnimating) return;
       isAnimating = true;
       index = i;
-      carousel!.style.transition = "transform 0.7s ease";
+      if (carousel) {
+        carousel.style.transition = "transform 0.7s ease-in-out";
+      }
       updateTransform();
     }
 
-    btnNext!.addEventListener("click", () => moveTo(index + 1));
-    btnPrev!.addEventListener("click", () => moveTo(index - 1));
+    function startAutoSlide() {
+      autoSlide = setInterval(() => moveTo(index + 1), 5000);
+    }
 
-    carousel!.addEventListener("transitionend", () => {
+    function resetAutoSlide() {
+      if (autoSlide) clearInterval(autoSlide);
+      startAutoSlide();
+    }
+
+    btnNext.addEventListener("click", () => {
+      moveTo(index + 1);
+      resetAutoSlide();
+    });
+
+    btnPrev.addEventListener("click", () => {
+      moveTo(index - 1);
+      resetAutoSlide();
+    });
+
+    carousel.addEventListener("transitionend", () => {
       if (index >= slidesCount - 1) {
-        carousel!.style.transition = "none";
+        carousel.style.transition = "none";
         index = 1;
-        carousel!.style.transform = `translateX(-${index * 100}%)`;
+        updateTransform();
       }
-
       if (index <= 0) {
-        carousel!.style.transition = "none";
+        carousel.style.transition = "none";
         index = slidesCount - 2;
-        carousel!.style.transform = `translateX(-${index * 100}%)`;
+        updateTransform();
       }
-
       setTimeout(() => {
-        carousel!.style.transition = "transform 0.7s ease";
+        if (carousel) {
+          carousel.style.transition = "transform 0.7s ease-in-out";
+        }
         isAnimating = false;
       }, 20);
     });
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowLeft") btnPrev!.click();
-      if (e.key === "ArrowRight") btnNext!.click();
+      if (e.key === "ArrowLeft") btnPrev.click();
+      if (e.key === "ArrowRight") btnNext.click();
     });
+
+    // Inicia automático
+    startAutoSlide();
   })();
 </script>

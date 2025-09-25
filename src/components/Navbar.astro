@@ -9,7 +9,7 @@
       <button
         id="dropdown-menu"
         type="button"
-        class="dropdown-toggle btn btn-text btn-circle dropdown-open:bg-black/40 dropdown-open:text-base-content"
+        class="dropdown-toggle btn btn-text btn-circle dropdown-open:bg-black/40 dropdown-open:text-white"
         aria-haspopup="menu"
         aria-expanded="false"
         aria-label="Menú"
@@ -23,19 +23,14 @@
         aria-labelledby="dropdown-menu"
       >
         <li>
-          <a class="dropdown-item hover:bg-emerald-500/20" href="/dashboard"
-            >Inicio</a
-          >
-          <a class="dropdown-item hover:bg-emerald-500/20" href="/menu">Menú</a>
-          <a class="dropdown-item hover:bg-emerald-500/20" href="/promociones"
-            >Promociones</a
-          >
-          <a class="dropdown-item hover:bg-emerald-500/20" href="/contacto"
-            >Contacto</a
-          >
+          <a class="dropdown-item hover:bg-red-600/30 text-white" href="/dashboard">Inicio</a>
+          <a class="dropdown-item hover:bg-red-600/30 text-white" href="/menu">Menú</a>
+          <a class="dropdown-item hover:bg-red-600/30 text-white" href="/promociones">Promociones</a>
+          <a class="dropdown-item hover:bg-red-600/30 text-white" href="/contacto">Contacto</a>
         </li>
       </ul>
     </div>
+
     <!-- Logo + Nombre -->
     <a href="/" class="flex items-center gap-3">
       <img
@@ -44,7 +39,7 @@
         class="h-10 w-10 object-contain rounded-md"
       />
       <span
-        class="text-white font-semibold text-lg hover:text-emerald-400 transition"
+        class="text-white font-semibold text-lg hover:text-red-400 transition"
       >
         Diego's Pizza
       </span>
@@ -57,40 +52,40 @@
     <div class="hidden md:flex items-center gap-6">
       <a
         href="/dashboard"
-        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
-               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400
+        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-yellow-400
+               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-yellow-400
                after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
         >Inicio</a
       >
 
       <a
         href="/crea-tu-pizza"
-        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
-               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400
+        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-yellow-400
+               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-yellow-400
                after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
         >Crea tu Pizza</a
       >
 
       <a
         href="/menu"
-        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
-               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400
+        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-yellow-400
+               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-yellow-400
                after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
         >Menú</a
       >
 
       <a
         href="/promociones"
-        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
-               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400
+        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-yellow-400
+               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-yellow-400
                after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
         >Promociones</a
       >
 
       <a
         href="/contacto"
-        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-emerald-400
-               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-emerald-400
+        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-yellow-400
+               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-yellow-400
                after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
         >Contacto</a
       >
@@ -99,11 +94,10 @@
     <!-- Carrito -->
     <a
       href="/carrito"
-      class="btn btn-circle btn-ghost hover:bg-emerald-500/20 transition duration-300 flex items-center justify-center"
+      class="btn btn-circle btn-ghost hover:bg-red-600/30 transition duration-300 flex items-center justify-center"
       aria-label="Carrito"
     >
-      <span class="icon-[tabler--shopping-cart] w-6 h-6 text-emerald-600"
-      ></span>
+      <span class="icon-[tabler--shopping-cart] w-6 h-6 text-yellow-400"></span>
     </a>
   </div>
 </nav>

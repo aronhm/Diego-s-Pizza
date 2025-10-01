@@ -35,40 +35,45 @@
   </div>
 
   <!-- 🔹 Carrusel -->
-  <div class="relative w-full h-[70vh] overflow-hidden">
+  <div class="relative w-full h-[50vh] overflow-hidden wraper">
     <div
       id="carousel"
       class="flex transition-transform duration-700 ease-in-out"
       style="transform: translateX(-100%)"
     >
       <!-- Clon último -->
-      <img src="" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 4" />
+      <img src="/promocion1.jpg" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 4" />
 
       <!-- Slides -->
-      <img src="/banner1.jpg" class="w-full flex-shrink-0 object-cover h-[70vh] " alt="Pizza 1" />
-      <img src="" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 2" />
-      <img src="" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 3" />
-      <img src="" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 4" />
+      <img src="/promocion1.jpg" class="w-full flex-shrink-0 object-cover h-full " alt="Pizza 1" />
+      <img src="/promocion1.jpg" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 2" />
+      <img src="/promocion1.jpg" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 3" />
+      <img src="/promocion1.jpg" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 4" />
 
       <!-- Clon primero -->
-      <img src="" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 1" />
+      <img src="/promocion1.jpg" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 1" />
     </div>
 
-    <!-- Botones navegación -->
-    <button
-      id="prev"
-      aria-label="Anterior"
-      class="absolute top-1/2 left-4 -translate-y-1/2 bg-red-600/70 text-white p-3 rounded-full shadow-md hover:bg-red-700 transition"
-    >
-      ❮
-    </button>
-    <button
-      id="next"
-      aria-label="Siguiente"
-      class="absolute top-1/2 right-4 -translate-y-1/2 bg-red-600/70 text-white p-3 rounded-full shadow-md hover:bg-red-700 transition"
-    >
-      ❯
-    </button>
+    <!-- Contenedor de botones -->
+    <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between px-4 sm:px-8">
+      <!-- Botón anterior -->
+      <button
+        id="prev"
+        aria-label="Anterior"
+        class="bg-red-600/70 text-white p-1.5 sm:p-3 rounded-full shadow-md hover:bg-red-700 transition mx-1 sm:mx-0"
+      >
+        ❮
+      </button>
+
+      <!-- Botón siguiente -->
+      <button
+        id="next"
+        aria-label="Siguiente"
+        class="bg-red-600/70 text-white p-1.5 sm:p-3 rounded-full shadow-md hover:bg-red-700 transition mx-1 sm:mx-0"
+      >
+        ❯
+      </button>
+    </div>
   </div>
 </section>
 

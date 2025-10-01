@@ -1,103 +1,200 @@
-<nav
-  class="navbar h-20 fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-lg shadow-lg shadow-black/10 px-6"
->
-  <div class="navbar-start flex items-center gap-4">
-    <!-- Menú desplegable -->
-    <div
-      class="dropdown relative inline-flex [--auto-close:inside] [--offset:9]"
-    >
-      <button
-        id="dropdown-menu"
-        type="button"
-        class="dropdown-toggle btn btn-text btn-circle dropdown-open:bg-black/40 dropdown-open:text-white"
-        aria-haspopup="menu"
-        aria-expanded="false"
-        aria-label="Menú"
-      >
-        <span class="icon-[tabler--menu-2] size-5"></span>
-      </button>
-      <ul
-        class="dropdown-menu dropdown-open:opacity-100 hidden bg-black/80 backdrop-blur-lg shadow-md rounded-lg"
-        role="menu"
-        aria-orientation="vertical"
-        aria-labelledby="dropdown-menu"
-      >
-        <li>
-          <a class="dropdown-item hover:bg-red-600/30 text-white" href="/dashboard">Inicio</a>
-          <a class="dropdown-item hover:bg-red-600/30 text-white" href="/menu">Menú</a>
-          <a class="dropdown-item hover:bg-red-600/30 text-white" href="/promociones">Promociones</a>
-          <a class="dropdown-item hover:bg-red-600/30 text-white" href="/contacto">Contacto</a>
-        </li>
-      </ul>
-    </div>
+<!-- 🔹 NAVBAR -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-[#b90000] shadow-md px-6">
+  <div class="flex items-center justify-between h-20">
 
-    <!-- Logo + Nombre -->
+    <!-- Logo -->
     <a href="/" class="flex items-center gap-3">
-      <img
-        src="/logotransparente.png"
-        alt="Logo Empresa"
-        class="h-10 w-10 object-contain rounded-md"
-      />
-      <span
-        class="text-white font-semibold text-lg hover:text-red-400 transition"
-      >
-        Diego's Pizza
-      </span>
+      <img src="/logotransparente.png" alt="Logo Empresa" class="h-10 w-10 object-contain rounded-md" />
+      <span class="text-white font-semibold text-lg">Diego's Pizza</span>
     </a>
-  </div>
 
-  <!-- Links principales + acciones (derecha) -->
-  <div class="navbar-end flex items-center gap-4">
-    <!-- Links -->
-    <div class="hidden md:flex items-center gap-6">
-      <a
-        href="/dashboard"
-        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-yellow-400
-               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-yellow-400
-               after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
-        >Inicio</a
-      >
-
-      <a
-        href="/crea-tu-pizza"
-        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-yellow-400
-               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-yellow-400
-               after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
-        >Crea tu Pizza</a
-      >
-
-      <a
-        href="/menu"
-        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-yellow-400
-               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-yellow-400
-               after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
-        >Menú</a
-      >
-
-      <a
-        href="/promociones"
-        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-yellow-400
-               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-yellow-400
-               after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
-        >Promociones</a
-      >
-
-      <a
-        href="/contacto"
-        class="relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-yellow-400
-               after:content-[''] after:block after:h-[2px] after:w-0 after:bg-yellow-400
-               after:transition-all after:duration-300 after:mx-auto hover:after:w-full"
-        >Contacto</a
-      >
+    <!-- Links escritorio -->
+    <div class="hidden md:flex items-center gap-8 ml-auto">
+      <a href="/" class="nav-link">Inicio</a>
+      <a href="/crea-tu-pizza" class="nav-link">Crea tu Pizza</a>
+      <a href="/menu" class="nav-link">Menú</a>
+      <a href="/promociones" class="nav-link">Promociones</a>
+      <a href="/contacto" class="nav-link">Contacto</a>
     </div>
 
-    <!-- Carrito -->
-    <a
-      href="/carrito"
-      class="btn btn-circle btn-ghost hover:bg-red-600/30 transition duration-300 flex items-center justify-center"
-      aria-label="Carrito"
-    >
-      <span class="icon-[tabler--shopping-cart] w-6 h-6 text-yellow-400"></span>
-    </a>
+    <!-- Acciones derecha -->
+    <div class="flex items-center gap-3 ml-6">
+      <!-- Botón Buscar (PC) -->
+      <button id="searchBtnDesktop" 
+        class="hidden md:block bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">
+        Buscar
+      </button>
+
+      <!-- Lupa Buscar (Móvil) -->
+      <button id="searchBtnMobile" class="md:hidden p-2 rounded-full hover:bg-red-600/30 transition" aria-label="Buscar">🔍</button>
+
+      <!-- Carrito -->
+      <a href="/carrito"
+        class="p-2 rounded-full hover:bg-red-600/30 transition flex items-center justify-center"
+        aria-label="Carrito">
+        🛒
+      </a>
+
+      <!-- Botón hamburguesa móvil -->
+      <button id="menuBtn" class="md:hidden p-2 rounded-full hover:bg-red-600/30 transition" aria-label="Menú">☰</button>
+    </div>
   </div>
 </nav>
+
+<!-- 🔹 MENU LATERAL (Sidebar Izquierdo) -->
+<div id="sidebar"
+  class="fixed top-0 left-0 h-full w-72 bg-black/95 text-white transform -translate-x-full transition-transform duration-300 z-50 shadow-lg flex flex-col">
+  
+  <!-- Encabezado Sidebar -->
+  <div class="flex items-center justify-between p-4 border-b border-gray-700">
+    <span class="text-lg font-bold">Diego's Pizza</span>
+    <button id="closeBtn" class="text-2xl hover:text-yellow-400">&times;</button>
+  </div>
+
+  <!-- Opciones de navegación -->
+  <div class="flex flex-col p-6 gap-6 text-lg font-medium">
+    <a href="/" class="hover:text-yellow-400 flex items-center gap-2">Inicio</a>
+    <a href="/crea-tu-pizza" class="hover:text-yellow-400 flex items-center gap-2">Crea tu Pizza</a>
+    <a href="/menu" class="hover:text-yellow-400 flex items-center gap-2">Menú</a>
+    <a href="/promociones" class="hover:text-yellow-400 flex items-center gap-2">Promociones</a>
+    <a href="/contacto" class="hover:text-yellow-400 flex items-center gap-2">Contacto</a>
+  </div>
+
+  <!-- Extra (abajo) -->
+  <div class="mt-auto p-6 border-t border-gray-700 text-sm space-y-3">
+    <a href="/ayuda" class="block hover:text-yellow-400">❓ Centro de Ayuda</a>
+  </div>
+</div>
+
+<!-- 🔹 PANEL DE BÚSQUEDA (PC → debajo del navbar con overlay) -->
+<div id="searchPanelDesktop"
+  class="fixed top-20 left-0 w-full max-h-0 bg-white text-gray-800 overflow-hidden transition-all duration-500 z-50 shadow-lg">
+  <div class="p-6">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-xl font-bold text-red-700">Buscar Pizzas</h2>
+      <button id="closeSearchDesktop" class="text-2xl font-bold text-red-700 hover:text-red-500">&times;</button>
+    </div>
+    <input 
+      type="text" 
+      id="searchInputDesktop"
+      placeholder="Escribe el nombre de la pizza..."
+      class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
+    >
+    <ul id="searchResultsDesktop" class="mt-4 space-y-2 font-semibold"></ul>
+  </div>
+</div>
+
+<!-- 🔹 PANEL DE BÚSQUEDA (Móvil → sidebar derecho, con overlay) -->
+<div id="searchPanelMobile"
+  class="fixed top-0 right-0 h-full w-72 bg-white text-gray-800 transform translate-x-full transition-transform duration-300 z-50 shadow-lg flex flex-col md:hidden">
+  <div class="flex items-center justify-between p-4 border-b border-gray-300">
+    <h2 class="text-lg font-bold text-red-700">Buscar Pizzas</h2>
+    <button id="closeSearchMobile" class="text-2xl font-bold text-red-700 hover:text-red-500">&times;</button>
+  </div>
+  <div class="p-4 flex flex-col gap-4">
+    <input 
+      type="text" 
+      id="searchInputMobile"
+      placeholder="Escribe el nombre de la pizza..."
+      class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
+    >
+    <ul id="searchResultsMobile" class="space-y-2 font-semibold"></ul>
+  </div>
+</div>
+
+<!-- 🔹 Overlay (unificado: móvil + desktop) -->
+<div id="overlay" class="fixed inset-0 bg-black/60 hidden z-40"></div>
+
+<script>
+  const pizzas = ["Pizza Margarita","Pizza Pepperoni","Pizza Hawaiana","Pizza Vegetariana","Pizza BBQ","Pizza Cuatro Quesos","Pizza Napolitana"];
+
+  const menuBtn = document.getElementById("menuBtn");
+  const sidebar = document.getElementById("sidebar");
+  const closeBtn = document.getElementById("closeBtn");
+  const overlay = document.getElementById("overlay");
+
+  // ---- Menú lateral móvil
+  menuBtn?.addEventListener("click", () => {
+    sidebar?.classList.remove("-translate-x-full");
+    overlay?.classList.remove("hidden");
+  });
+  closeBtn?.addEventListener("click", () => {
+    sidebar?.classList.add("-translate-x-full");
+    overlay?.classList.add("hidden");
+  });
+
+  // ---- Búsqueda Desktop
+  const searchBtnDesktop = document.getElementById("searchBtnDesktop");
+  const searchPanelDesktop = document.getElementById("searchPanelDesktop");
+  const closeSearchDesktop = document.getElementById("closeSearchDesktop");
+  const searchInputDesktop = document.getElementById("searchInputDesktop");
+  const searchResultsDesktop = document.getElementById("searchResultsDesktop");
+
+  searchBtnDesktop?.addEventListener("click", () => {
+    searchPanelDesktop?.classList.remove("max-h-0");
+    searchPanelDesktop?.classList.add("max-h-[400px]");
+    overlay?.classList.remove("hidden");
+    searchInputDesktop?.focus();
+  });
+  closeSearchDesktop?.addEventListener("click", () => {
+    searchPanelDesktop?.classList.add("max-h-0");
+    searchPanelDesktop?.classList.remove("max-h-[400px]");
+    overlay?.classList.add("hidden");
+    if (searchInputDesktop) (searchInputDesktop as HTMLInputElement).value = "";
+    if (searchResultsDesktop) searchResultsDesktop.innerHTML = "";
+  });
+
+  searchInputDesktop?.addEventListener("input", () => {
+    const q = (searchInputDesktop as HTMLInputElement).value.toLowerCase();
+    if (searchResultsDesktop) {
+      searchResultsDesktop.innerHTML = pizzas
+        .filter(p => p.toLowerCase().includes(q))
+        .map(p => `<li class="p-2 bg-gray-100 rounded hover:bg-gray-200 cursor-pointer">${p}</li>`)
+        .join("");
+    }
+  });
+
+  // ---- Búsqueda Móvil
+  const searchBtnMobile = document.getElementById("searchBtnMobile");
+  const searchPanelMobile = document.getElementById("searchPanelMobile");
+  const closeSearchMobile = document.getElementById("closeSearchMobile");
+  const searchInputMobile = document.getElementById("searchInputMobile");
+  const searchResultsMobile = document.getElementById("searchResultsMobile");
+
+  searchBtnMobile?.addEventListener("click", () => {
+    searchPanelMobile?.classList.remove("translate-x-full");
+    overlay?.classList.remove("hidden");
+    searchInputMobile?.focus();
+  });
+  closeSearchMobile?.addEventListener("click", () => {
+    searchPanelMobile?.classList.add("translate-x-full");
+    overlay?.classList.add("hidden");
+    if (searchInputMobile) (searchInputMobile as HTMLInputElement).value = "";
+    if (searchResultsMobile) searchResultsMobile.innerHTML = "";
+  });
+
+  searchInputMobile?.addEventListener("input", () => {
+    const q = searchInputMobile.value.toLowerCase();
+    searchResultsMobile.innerHTML = pizzas
+      .filter(p => p.toLowerCase().includes(q))
+      .map(p => `<li class="p-2 bg-gray-100 rounded hover:bg-gray-200 cursor-pointer">${p}</li>`)
+      .join("");
+  });
+
+  // ---- Cerrar con overlay
+  overlay?.addEventListener("click", () => {
+    sidebar?.classList.add("-translate-x-full");
+    searchPanelMobile?.classList.add("translate-x-full");
+    searchPanelDesktop?.classList.add("max-h-0");
+    searchPanelDesktop?.classList.remove("max-h-[400px]");
+    overlay?.classList.add("hidden");
+  });
+</script>
+
+<style>
+  .nav-link {
+    @apply relative text-white text-lg font-medium no-underline transition-all duration-300 hover:text-yellow-400 
+    after:content-[''] after:block after:h-[2px] after:w-0 after:bg-yellow-400 
+    after:transition-all after:duration-300 after:mx-auto hover:after:w-full;
+  }
+</style>

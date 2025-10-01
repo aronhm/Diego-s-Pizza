@@ -142,11 +142,13 @@
     }
 
     function startAutoSlide() {
-      autoSlide = setInterval(() => moveTo(index + 1), 5000);
+      autoSlide = window.setInterval(() => moveTo(index + 1), 5000);
     }
 
     function resetAutoSlide() {
-      if (autoSlide) clearInterval(autoSlide);
+      if (autoSlide !== undefined) {
+        window.clearInterval(autoSlide);
+      }
       startAutoSlide();
     }
 

@@ -1,8 +1,10 @@
 <section class="hero-section w-full font-sans">
   <!-- 🔹 Tira Superior -->
-  <div class="w-full bg-red-700 py-1 px-6 flex items-center justify-between shadow-md">
+  <div
+    class="w-full bg-red-700 py-1 px-6 flex items-center justify-between shadow-md"
+  >
     <!-- Izquierda (Botón destacado) -->
-    <a 
+    <a
       href="/oferta-especial"
       class="px-6 py-0.5 text-sm font-semibold text-white bg-yellow-500 rounded-full shadow-lg hover:bg-yellow-400 transition"
     >
@@ -11,13 +13,13 @@
 
     <!-- Derecha (dos enlaces simples) -->
     <div class="flex gap-6">
-      <a 
+      <a
         href="/promo-2x1"
         class="text-lg font-semibold text-white hover:text-yellow-300 transition"
       >
         2x1 en Pizzas
       </a>
-      <a 
+      <a
         href="/bebida-gratis"
         class="text-lg font-semibold text-white hover:text-yellow-300 transition"
       >
@@ -27,9 +29,15 @@
   </div>
 
   <!-- 🔹 Tira Inferior -->
-  <div class="w-full bg-green-700 py-3 px-6 flex items-center justify-center text-center">
+  <div
+    class="w-full bg-green-700 py-3 px-6 flex items-center justify-center text-center"
+  >
     <p class="text-lg font-bold text-white tracking-wide">
-      🍕 50% de DTO en toda la Carta con cupón <span class="text-yellow-300">50DTO</span> | 🚚 Hoy Delivery GRATIS desde <span class="text-yellow-300">S/23.90</span>.  
+      🍕 50% de DTO en toda la Carta con cupón <span class="text-yellow-300"
+        >50DTO</span
+      > | 🚚 Hoy Delivery GRATIS desde <span class="text-yellow-300"
+        >S/23.90</span
+      >.
       <span class="uppercase text-yellow-400">¡Exclusivo en Web!</span>
     </p>
   </div>
@@ -42,20 +50,46 @@
       style="transform: translateX(-100%)"
     >
       <!-- Clon último -->
-      <img src="/promocion1.jpg" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 4" />
+      <img
+        src="/promocion1.jpg"
+        class="w-full flex-shrink-0 object-cover h-full"
+        alt="Pizza 4"
+      />
 
       <!-- Slides -->
-      <img src="/promocion1.jpg" class="w-full flex-shrink-0 object-cover h-full " alt="Pizza 1" />
-      <img src="/promocion1.jpg" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 2" />
-      <img src="/promocion1.jpg" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 3" />
-      <img src="/promocion1.jpg" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 4" />
+      <img
+        src="/promocion1.jpg"
+        class="w-full flex-shrink-0 object-cover h-full"
+        alt="Pizza 1"
+      />
+      <img
+        src="/promocion1.jpg"
+        class="w-full flex-shrink-0 object-cover h-full"
+        alt="Pizza 2"
+      />
+      <img
+        src="/promocion1.jpg"
+        class="w-full flex-shrink-0 object-cover h-full"
+        alt="Pizza 3"
+      />
+      <img
+        src="/promocion1.jpg"
+        class="w-full flex-shrink-0 object-cover h-full"
+        alt="Pizza 4"
+      />
 
       <!-- Clon primero -->
-      <img src="/promocion1.jpg" class="w-full flex-shrink-0 object-cover h-full" alt="Pizza 1" />
+      <img
+        src="/promocion1.jpg"
+        class="w-full flex-shrink-0 object-cover h-full"
+        alt="Pizza 1"
+      />
     </div>
 
     <!-- Contenedor de botones -->
-    <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between px-4 sm:px-8">
+    <div
+      class="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between px-4 sm:px-8"
+    >
       <!-- Botón anterior -->
       <button
         id="prev"
@@ -90,7 +124,7 @@
     const slidesCount = slides.length;
     let index = 1;
     let isAnimating = false;
-    let autoSlide: ReturnType<typeof setInterval> | null = null;
+    let autoSlide: number | undefined = undefined;
 
     function updateTransform() {
       if (!carousel) return;

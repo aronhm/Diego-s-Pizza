@@ -1,10 +1,13 @@
 <!-- 🔹 NAVBAR -->
 <nav class="fixed top-0 left-0 w-full z-50 bg-[#b90000] shadow-md px-6">
   <div class="flex items-center justify-between h-20">
-
     <!-- Logo -->
     <a href="/" class="flex items-center gap-3">
-      <img src="/logotransparente.png" alt="Logo Empresa" class="h-10 w-10 object-contain rounded-md" />
+      <img
+        src="/logotransparente.png"
+        alt="Logo Empresa"
+        class="h-10 w-10 object-contain rounded-md"
+      />
       <span class="text-white font-semibold text-lg">Diego's Pizza</span>
     </a>
 
@@ -20,44 +23,67 @@
     <!-- Acciones derecha -->
     <div class="flex items-center gap-3 ml-6">
       <!-- Botón Buscar (PC) -->
-      <button id="searchBtnDesktop" 
-        class="hidden md:block bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">
+      <button
+        id="searchBtnDesktop"
+        class="hidden md:block bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition"
+      >
         Buscar
       </button>
 
       <!-- Lupa Buscar (Móvil) -->
-      <button id="searchBtnMobile" class="md:hidden p-2 rounded-full hover:bg-red-600/30 transition" aria-label="Buscar">🔍</button>
+      <button
+        id="searchBtnMobile"
+        class="md:hidden p-2 rounded-full hover:bg-red-600/30 transition"
+        aria-label="Buscar">🔍</button
+      >
 
       <!-- Carrito -->
-      <a href="/carrito"
+      <a
+        href="/carrito"
         class="p-2 rounded-full hover:bg-red-600/30 transition flex items-center justify-center"
-        aria-label="Carrito">
+        aria-label="Carrito"
+      >
         🛒
       </a>
 
       <!-- Botón hamburguesa móvil -->
-      <button id="menuBtn" class="md:hidden p-2 rounded-full hover:bg-red-600/30 transition" aria-label="Menú">☰</button>
+      <button
+        id="menuBtn"
+        class="md:hidden p-2 rounded-full hover:bg-red-600/30 transition"
+        aria-label="Menú">☰</button
+      >
     </div>
   </div>
 </nav>
 
 <!-- 🔹 MENU LATERAL (Sidebar Izquierdo) -->
-<div id="sidebar"
-  class="fixed top-0 left-0 h-full w-72 bg-black/95 text-white transform -translate-x-full transition-transform duration-300 z-50 shadow-lg flex flex-col">
-  
+<div
+  id="sidebar"
+  class="fixed top-0 left-0 h-full w-72 bg-black/95 text-white transform -translate-x-full transition-transform duration-300 z-50 shadow-lg flex flex-col"
+>
   <!-- Encabezado Sidebar -->
   <div class="flex items-center justify-between p-4 border-b border-gray-700">
     <span class="text-lg font-bold">Diego's Pizza</span>
-    <button id="closeBtn" class="text-2xl hover:text-yellow-400">&times;</button>
+    <button id="closeBtn" class="text-2xl hover:text-yellow-400">&times;</button
+    >
   </div>
 
   <!-- Opciones de navegación -->
   <div class="flex flex-col p-6 gap-6 text-lg font-medium">
     <a href="/" class="hover:text-yellow-400 flex items-center gap-2">Inicio</a>
-    <a href="/crea-tu-pizza" class="hover:text-yellow-400 flex items-center gap-2">Crea tu Pizza</a>
-    <a href="/menu" class="hover:text-yellow-400 flex items-center gap-2">Menú</a>
-    <a href="/promociones" class="hover:text-yellow-400 flex items-center gap-2">Promociones</a>
-    <a href="/contacto" class="hover:text-yellow-400 flex items-center gap-2">Contacto</a>
+    <a
+      href="/crea-tu-pizza"
+      class="hover:text-yellow-400 flex items-center gap-2">Crea tu Pizza</a
+    >
+    <a href="/menu" class="hover:text-yellow-400 flex items-center gap-2"
+      >Menú</a
+    >
+    <a href="/promociones" class="hover:text-yellow-400 flex items-center gap-2"
+      >Promociones</a
+    >
+    <a href="/contacto" class="hover:text-yellow-400 flex items-center gap-2"
+      >Contacto</a
+    >
   </div>
 
   <!-- Extra (abajo) -->
@@ -67,37 +93,48 @@
 </div>
 
 <!-- 🔹 PANEL DE BÚSQUEDA (PC → debajo del navbar con overlay) -->
-<div id="searchPanelDesktop"
-  class="fixed top-20 left-0 w-full max-h-0 bg-white text-gray-800 overflow-hidden transition-all duration-500 z-50 shadow-lg">
+<div
+  id="searchPanelDesktop"
+  class="fixed top-20 left-0 w-full max-h-0 bg-white text-gray-800 overflow-hidden transition-all duration-500 z-50 shadow-lg"
+>
   <div class="p-6">
     <div class="flex justify-between items-center mb-4">
       <h2 class="text-xl font-bold text-red-700">Buscar Pizzas</h2>
-      <button id="closeSearchDesktop" class="text-2xl font-bold text-red-700 hover:text-red-500">&times;</button>
+      <button
+        id="closeSearchDesktop"
+        class="text-2xl font-bold text-red-700 hover:text-red-500"
+        >&times;</button
+      >
     </div>
-    <input 
-      type="text" 
+    <input
+      type="text"
       id="searchInputDesktop"
       placeholder="Escribe el nombre de la pizza..."
       class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
-    >
+    />
     <ul id="searchResultsDesktop" class="mt-4 space-y-2 font-semibold"></ul>
   </div>
 </div>
 
 <!-- 🔹 PANEL DE BÚSQUEDA (Móvil → sidebar derecho, con overlay) -->
-<div id="searchPanelMobile"
-  class="fixed top-0 right-0 h-full w-72 bg-white text-gray-800 transform translate-x-full transition-transform duration-300 z-50 shadow-lg flex flex-col md:hidden">
+<div
+  id="searchPanelMobile"
+  class="fixed top-0 right-0 h-full w-72 bg-white text-gray-800 transform translate-x-full transition-transform duration-300 z-50 shadow-lg flex flex-col md:hidden"
+>
   <div class="flex items-center justify-between p-4 border-b border-gray-300">
     <h2 class="text-lg font-bold text-red-700">Buscar Pizzas</h2>
-    <button id="closeSearchMobile" class="text-2xl font-bold text-red-700 hover:text-red-500">&times;</button>
+    <button
+      id="closeSearchMobile"
+      class="text-2xl font-bold text-red-700 hover:text-red-500">&times;</button
+    >
   </div>
   <div class="p-4 flex flex-col gap-4">
-    <input 
-      type="text" 
+    <input
+      type="text"
       id="searchInputMobile"
       placeholder="Escribe el nombre de la pizza..."
       class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-red-500 outline-none"
-    >
+    />
     <ul id="searchResultsMobile" class="space-y-2 font-semibold"></ul>
   </div>
 </div>
@@ -106,7 +143,15 @@
 <div id="overlay" class="fixed inset-0 bg-black/60 hidden z-40"></div>
 
 <script>
-  const pizzas = ["Pizza Margarita","Pizza Pepperoni","Pizza Hawaiana","Pizza Vegetariana","Pizza BBQ","Pizza Cuatro Quesos","Pizza Napolitana"];
+  const pizzas = [
+    "Pizza Margarita",
+    "Pizza Pepperoni",
+    "Pizza Hawaiana",
+    "Pizza Vegetariana",
+    "Pizza BBQ",
+    "Pizza Cuatro Quesos",
+    "Pizza Napolitana",
+  ];
 
   const menuBtn = document.getElementById("menuBtn");
   const sidebar = document.getElementById("sidebar");
@@ -148,8 +193,11 @@
     const q = (searchInputDesktop as HTMLInputElement).value.toLowerCase();
     if (searchResultsDesktop) {
       searchResultsDesktop.innerHTML = pizzas
-        .filter(p => p.toLowerCase().includes(q))
-        .map(p => `<li class="p-2 bg-gray-100 rounded hover:bg-gray-200 cursor-pointer">${p}</li>`)
+        .filter((p) => p.toLowerCase().includes(q))
+        .map(
+          (p) =>
+            `<li class="p-2 bg-gray-100 rounded hover:bg-gray-200 cursor-pointer">${p}</li>`
+        )
         .join("");
     }
   });
@@ -174,11 +222,16 @@
   });
 
   searchInputMobile?.addEventListener("input", () => {
-    const q = searchInputMobile.value.toLowerCase();
-    searchResultsMobile.innerHTML = pizzas
-      .filter(p => p.toLowerCase().includes(q))
-      .map(p => `<li class="p-2 bg-gray-100 rounded hover:bg-gray-200 cursor-pointer">${p}</li>`)
-      .join("");
+    const q = (searchInputMobile as HTMLInputElement).value.toLowerCase();
+    if (searchResultsMobile) {
+      searchResultsMobile.innerHTML = pizzas
+        .filter((p) => p.toLowerCase().includes(q))
+        .map(
+          (p) =>
+            `<li class="p-2 bg-gray-100 rounded hover:bg-gray-200 cursor-pointer">${p}</li>`
+        )
+        .join("");
+    }
   });
 
   // ---- Cerrar con overlay

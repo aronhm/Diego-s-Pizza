@@ -1,0 +1,125 @@
+---
+---
+<div class="w-full bg-[#2b2533] py-10 relative">
+  <!-- Título -->
+  <h2 class="text-2xl font-bold text-white ml-5 mb-5">Promociones</h2>
+
+  <!-- Botón Izquierda -->
+  <button
+    class="absolute left-2 top-1/2 -translate-y-1/2 bg-black text-white rounded-full p-3 text-xl opacity-80 hover:opacity-100 z-10"
+    onclick="document.getElementById('carrusel').scrollBy({left: -270, behavior: 'smooth'})"
+  >
+    &#10094;
+  </button>
+
+  <!-- Carrusel -->
+  <div
+    id="carrusel"
+    class="flex overflow-x-auto scroll-smooth no-scrollbar px-5 space-x-5"
+  >
+    <div
+      class="relative min-w-[250px] bg-white rounded-2xl overflow-hidden text-center text-black flex-shrink-0"
+    >
+      <button
+        class="px-4 py-1 bg-[#f5fafa] text-black rounded cursor-pointer transition-all duration-300 hover:bg-[#ff0000]"
+      >
+        Match perfecto
+      </button>
+
+      <img
+        src="promo1.png"
+        alt="Pizza 1"
+        class="w-full h-[180px] object-cover"
+      />
+
+      <h3 class="py-3 font-semibold">Pizza Pepperoni</h3>
+    </div>
+
+    <div
+      class="min-w-[250px] bg-white rounded-2xl overflow-hidden text-center text-black flex-shrink-0"
+    >
+      <button
+        class="px-4 py-1 bg-[#f5fafa] text-black rounded cursor-pointer transition-all duration-300 hover:bg-[#ff0000]"
+      >
+        Promocion
+      </button>
+      <img
+        src="promo1.png"
+        alt="Pizza 2"
+        class="w-full h-[180px] object-cover"
+      />
+
+      <h3 class="py-3 font-semibold">Pizza Hawaiana</h3>
+    </div>
+
+    <div
+      class="min-w-[250px] bg-white rounded-2xl overflow-hidden text-center text-black flex-shrink-0"
+    >
+      <button
+        class="px-4 py-1 bg-[#f5fafa] text-black rounded cursor-pointer transition-all duration-300 hover:bg-[#ff0000]"
+      >
+        Pizzas
+      </button>
+      <img
+        src="promo1.png"
+        alt="Pizza 3"
+        class="w-full h-[180px] object-cover"
+      />
+
+      <h3 class="py-3 font-semibold">Pizza Suprema</h3>
+    </div>
+
+    <div
+      class="min-w-[250px] bg-white rounded-2xl overflow-hidden text-center text-black flex-shrink-0"
+    >
+      <button
+        class="px-4 py-1 bg-[#f5fafa] text-black rounded cursor-pointer transition-all duration-300 hover:bg-[#ff0000]"
+      >
+        Combos
+      </button>
+      <img
+        src="promo1.png"
+        alt="Pizza 4"
+        class="w-full h-[180px] object-cover"
+      />
+
+      <h3 class="py-3 font-semibold">Pizza BBQ</h3>
+    </div>
+
+    <div
+      class="min-w-[250px] bg-white rounded-2xl overflow-hidden text-center text-black flex-shrink-0"
+    >
+      <button
+        class="px-4 py-1 bg-[#f5fafa] text-black rounded cursor-pointer transition-all duration-300 hover:bg-[#ff0000]"
+      >
+        Promos Signature
+      </button>
+      <img
+        src="promo1.png"
+        alt="Pizza 5"
+        class="w-full h-[180px] object-cover"
+      />
+
+      <h3 class="py-3 font-semibold">Pizza Veggie</h3>
+    </div>
+  </div>
+
+  <!-- Botón Derecha -->
+  <button
+    class="absolute right-2 top-1/2 -translate-y-1/2 bg-black text-white rounded-full p-3 text-xl opacity-80 hover:opacity-100 z-10"
+    onclick="document.getElementById('carrusel').scrollBy({left: 270, behavior: 'smooth'})"
+  >
+    &#10095;
+  </button>
+</div>
+
+<style>
+  /* Para ocultar scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>

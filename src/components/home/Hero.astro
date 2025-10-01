@@ -99,19 +99,16 @@
         ❮
       </button>
 
-      <!-- Botón siguiente -->
-      <button
-        id="next"
-        aria-label="Siguiente"
-        class="bg-red-600/70 text-white p-1.5 sm:p-3 rounded-full shadow-md hover:bg-red-700 transition mx-1 sm:mx-0"
-      >
-        ❯
-      </button>
-    </div>
+    {/* Botón siguiente */}
+    <button
+      id="next"
+      class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition"
+    >
+      ❯
+    </button>
   </div>
-</section>
-
-<!-- Script Carrusel -->
+  
+{/* Script para loop infinito */}
 <script>
   (function () {
     const carousel = document.getElementById("carousel");
